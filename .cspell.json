@@ -1,4 +1,10 @@
 {
-  "words": ["Avenir", "tailwindcss", "daisyui"]
+  "words": [
+    "appspot",
+    "Avenir",
+    "daisyui",
+    "firebaseapp",
+    "tailwindcss"
+  ]
 }
 //unknown word라는 알림 삭제

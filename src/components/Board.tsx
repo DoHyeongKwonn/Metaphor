@@ -1,11 +1,11 @@
 function Board() {
   return (
     <>
-      <div className="base flex justify-center">
+      <div className="board flex justify-center ">
         {/* 가운데 정렬해주는 div를 감싸서  */}
-        <div className="bg-white pb-4 px-4 rounded-md w-2/3 ">
+        <div className="bg-oklch pb-4 px-4 rounded-md w-2/3 ">
           <div className="flex justify-between w-full pt-6 ">
-            <p className="ml-3"> Users Table</p>
+            <p className="title ml-3 text-gray-300">게시판</p>
             <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
           </div>
           <div className="w-full flex justify-end px-2 mt-2">
@@ -28,21 +28,15 @@ function Board() {
             <table className="table-auto border-collapse w-full">
               <thead>
                 <tr
-                  className="rounded-lg text-sm font-medium text-gray-700 text-left"
+                  className="rounded-lg text-sm font-medium text-gray-300 text-left"
                   style={{ fontSize: "0.9674rem" }}
                 >
-                  <th className="px-4 py-2 bg-gray-200 " style={{ backgroundColor: "#f8f8f8" }}>
-                    Title
-                  </th>
-                  <th className="px-4 py-2 " style={{ backgroundColor: "#f8f8f8" }}>
-                    Author
-                  </th>
-                  <th className="px-4 py-2 " style={{ backgroundColor: "#f8f8f8" }}>
-                    Views
-                  </th>
+                  <th className="px-4 py-2 bg-oklch border-b border-gray-200">Title</th>
+                  <th className="px-4 py-2 bg-oklch border-b border-gray-200">Author</th>
+                  <th className="px-4 py-2 bg-oklch border-b border-gray-200">Views</th>
                 </tr>
               </thead>
-              <tbody className="text-sm font-normal text-gray-700">
+              <tbody className="text-sm font-normal text-gray-300">
                 <tr className="hover:bg-gray-100 border-b border-gray-200 py-10">
                   <td className="px-4 py-4">Intro to CSS</td>
                   <td className="px-4 py-4">Adam</td>
@@ -110,8 +104,8 @@ function Board() {
             >
               <g opacity="0.4">
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M9 12C9 12.2652 9.10536 12.5196 9.29289 12.7071L13.2929 16.7072C13.6834 17.0977 14.3166 17.0977 14.7071 16.7072C15.0977 16.3167 15.0977 15.6835 14.7071 15.293L11.4142 12L14.7071 8.70712C15.0977 8.31659 15.0977 7.68343 14.7071 7.29289C14.3166 6.90237 13.6834 6.90237 13.2929 7.29289L9.29289 11.2929C9.10536 11.4804 9 11.7348 9 12Z"
                   fill="#2C2C2C"
                 />
@@ -131,8 +125,8 @@ function Board() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M15 12C15 11.7348 14.8946 11.4804 14.7071 11.2929L10.7071 7.2929C10.3166 6.9024 9.6834 6.9024 9.2929 7.2929C8.9024 7.6834 8.9024 8.3166 9.2929 8.7071L12.5858 12L9.2929 15.2929C8.9024 15.6834 8.9024 16.3166 9.2929 16.7071C9.6834 17.0976 10.3166 17.0976 10.7071 16.7071L14.7071 12.7071C14.8946 12.5196 15 12.2652 15 12Z"
                 fill="#18A0FB"
               />
