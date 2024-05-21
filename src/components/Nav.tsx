@@ -39,12 +39,12 @@ function Nav() {
           <a className="btn btn-ghost px-10">영화</a>
         </div>
         <div>
-          <a href="/Board" className="btn btn-ghost px-10">
+          <a href="/spoils" className="btn btn-ghost px-10">
             스포 게시판
           </a>
         </div>
         <div>
-          <a href="/Board" className="btn btn-ghost px-10">
+          <a href="/contents" className="btn btn-ghost px-10">
             일반 게시판
           </a>
         </div>

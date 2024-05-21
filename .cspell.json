@@ -4,7 +4,9 @@
     "Avenir",
     "daisyui",
     "firebaseapp",
-    "tailwindcss"
+    "Firestore",
+    "tailwindcss",
+    "writepage"
   ]
 }
 //unknown word라는 알림 삭제
