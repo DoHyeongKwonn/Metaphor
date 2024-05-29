@@ -159,12 +159,12 @@ function Movies() {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="flex justify-start mt-2 overflow-x-auto w-3/4">
+        <div className="flex justify-start mt-2 overflow-x-auto w-3/4 flex-wrap">
           장르:
           {genres.map((genre) => (
             <div
               key={genre}
-              className={`badge badge-outline cursor-pointer mx-2 mt-1  ${
+              className={`badge badge-outline cursor-pointer mx-2 mt-1 mb-1  ${
                 selectedBadges.includes(genre) ? "badge-active" : ""
               }`}
               onClick={() => toggleBadge(genre)}
@@ -173,7 +173,7 @@ function Movies() {
             </div>
           ))}
         </div>
-        <div className="flex justify-start mt-2 overflow-x-auto w-3/4">
+        <div className="flex justify-start mt-2 overflow-x-auto w-3/4 flex-wrap">
           별점:
           {ratings.map((rating) => (
             <div
