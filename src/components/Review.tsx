@@ -40,20 +40,18 @@ function Review({ id }: ReviewProps) {
   };
 
   return (
-    <div className="pl-[440px] pr-[435px]">
-      <form onSubmit={onSubmit}>
-        <textarea
-          placeholder="Type your review here"
-          className="input input-bordered w-full pt-3 resize-none overflow-y-auto"
-          style={{ height: "150px" }}
-          value={content}
-          onChange={(e) => setContent(e.target.value)} // 상태 업데이트
-        />
-        <button type="submit" className="push btn btn-primary" disabled={isLoading}>
-          Post
-        </button>
-      </form>
-    </div>
+    <form onSubmit={onSubmit}>
+      <textarea
+        placeholder="Type your review here"
+        className="input input-bordered w-full pt-3 resize-none overflow-y-auto"
+        style={{ height: "150px" }}
+        value={content}
+        onChange={(e) => setContent(e.target.value)} // 상태 업데이트
+      />
+      <button type="submit" className="push btn btn-primary float-end" disabled={isLoading}>
+        Post
+      </button>
+    </form>
   );
 }
 export default Review;

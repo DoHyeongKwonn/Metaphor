@@ -139,23 +139,27 @@ function Detail() {
             )} */}
         </div>
       </div>
-      <div className="commentBox mt-10">
-        {reviews.length > 0 ? (
-          reviews.map((review, index) => (
-            <div key={index} className="commentDisplay mb-2">
-              <div className="area rounded-lg shadow-md pb-1 min-h-15">
-                <div className="px-4 pt-2">{review.content}</div>
-                <div className="px-4 text-right">
-                  {review.username} - {review.time}
+      <div className="flex flex-col items-center mt-10">
+        <div className="pb-4 px-4 w-2/3">
+          {reviews.length > 0 ? (
+            reviews.map((review, index) => (
+              <div key={index} className=" mb-2">
+                <div className="area rounded-lg shadow-md pb-1 min-h-15">
+                  <div className="px-4 pt-2">{review.content}</div>
+                  <div className="px-4 text-right">
+                    {review.username} - {review.time}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
-        ) : (
-          <div className="pl-2">등록된 리뷰가 없습니다.</div>
-        )}
+            ))
+          ) : (
+            <div className="pl-2">등록된 리뷰가 없습니다.</div>
+          )}
+        </div>
+        <div className="comment pb-4 px-4  w-2/3">
+          <Review id={id} />
+        </div>
       </div>
-      <Review id={id} />
     </>
   );
 }
