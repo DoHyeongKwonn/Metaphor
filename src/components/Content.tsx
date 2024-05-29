@@ -117,7 +117,7 @@ function Content() {
   }
   return (
     <>
-      <div className="board flex justify-center mt-10">
+      <div className="flex flex-col items-center mt-10">
         <div className="pb-4 px-4 w-2/3">
           {/* <div>
             <ImageComponent />
@@ -150,12 +150,11 @@ function Content() {
             </div>
           )}
         </div>
-      </div>
-      <div className="board  justify-center mt-10">
-        <div className="commentBox mt-10">
+
+        <div className="pb-4 px-4 w-2/3">
           {comments.length > 0 ? (
             comments.map((comment, index) => (
-              <div key={index} className="commentDisplay mb-2 px-[430px]">
+              <div key={index} className="area mb-2 ">
                 <div className="area rounded-lg shadow-md pb-1 min-h-15">
                   <div className="px-4 pt-2">{comment.content}</div>
                   <div className="px-4 text-right">
@@ -181,10 +180,10 @@ function Content() {
               </div>
             ))
           ) : (
-            <div className=" my-2 px-[435px]">등록된 댓글이 없습니다.</div>
+            <div className=" my-2 ">등록된 댓글이 없습니다.</div>
           )}
         </div>
-        <div className="comment pb-4 px-4  px-[430px]">
+        <div className="comment pb-4 px-4  w-2/3">
           <Comment collectionName={collectionName} postId={id} />
         </div>
       </div>
