@@ -158,8 +158,8 @@ function Movies() {
 
   return (
     <>
-      <div className=" px-[400px]">
-        <div className="flex justify-start mt-2 overflow-x-auto">
+      <div className="flex flex-col items-center">
+        <div className="flex justify-start mt-2 overflow-x-auto w-3/4">
           장르:
           {genres.map((genre) => (
             <div
@@ -173,7 +173,7 @@ function Movies() {
             </div>
           ))}
         </div>
-        <div className="flex justify-start mt-2 overflow-x-auto">
+        <div className="flex justify-start mt-2 overflow-x-auto w-3/4">
           별점:
           {ratings.map((rating) => (
             <div
@@ -187,7 +187,7 @@ function Movies() {
             </div>
           ))}
         </div>
-        <div className="flex justify-start mt-2">
+        <div className="flex justify-start mt-2 w-3/4">
           검색 조건:
           {selectedBadges.map((badge) => (
             <div
