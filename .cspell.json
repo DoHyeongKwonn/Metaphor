@@ -6,6 +6,7 @@
     "firebaseapp",
     "Firestore",
     "tailwindcss",
+    "tmdb",
     "writepage"
   ]
 }

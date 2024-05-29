@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { ref, uploadBytes } from "firebase/storage";
 import { getDownloadURL } from "firebase/storage";
 
-interface WritePageProps {
-  collectionName: string; // 컬렉션 이름을 prop으로 받습니다.
-}
+// interface WritePageProps {
+//   collectionName: string;
+// } 이렇게 받아도 되지만 prop이 하나이기 때문에 간결하게 WritePage({ collectionName }: { collectionName: string }) 작성
 
-function WritePage({ collectionName }: WritePageProps) {
+function WritePage({ collectionName }: { collectionName: string }) {
   const [isLoading, setLoading] = useState(false);
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
@@ -57,7 +57,7 @@ function WritePage({ collectionName }: WritePageProps) {
     try {
       setLoading(true);
       const doc = await addDoc(collection(db, collectionName), {
-        // prop으로 받은 collectionName 사용
+        // prop으로 받은 collectionName 에 데이터를 저장
         title,
         content,
         createAt: serverTimestamp(),
@@ -65,7 +65,7 @@ function WritePage({ collectionName }: WritePageProps) {
         userId: user.uid,
       });
       if (file) {
-        const locationRef = ref(storage, `${collectionName}/${user.uid}-${user.displayName}/${doc.id}`);
+        const locationRef = ref(storage, `${collectionName}/${user.uid}/${doc.id}`);
         const result = await uploadBytes(locationRef, file);
         const url = await getDownloadURL(result.ref);
         await updateDoc(doc, {

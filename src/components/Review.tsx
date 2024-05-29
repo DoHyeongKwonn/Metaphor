@@ -2,12 +2,11 @@ import { auth, db } from "../firebase";
 import { useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
-interface CommentProps {
-  collectionName: string;
-  postId: string; //컬렉션 이름이랑 게시글의 ID를 prop으로 받기
+interface ReviewProps {
+  id: string | undefined;
 }
 
-function Comment({ collectionName, postId }: CommentProps) {
+function Review({ id }: ReviewProps) {
   const [isLoading, setLoading] = useState(false);
   const [content, setContent] = useState("");
 
@@ -23,7 +22,8 @@ function Comment({ collectionName, postId }: CommentProps) {
 
     try {
       setLoading(true);
-      const doc = await addDoc(collection(db, `${collectionName}/${postId}/comments`), {
+      const doc = await addDoc(collection(db, `review/${id}/reviews`), {
+        // postId에 해당하는 리뷰 컬렉션에 추가
         content,
         createdAt: serverTimestamp(),
         username: user.displayName || "Anonymous",
@@ -40,20 +40,20 @@ function Comment({ collectionName, postId }: CommentProps) {
   };
 
   return (
-    <div>
+    <div className="pl-[440px] pr-[435px]">
       <form onSubmit={onSubmit}>
         <textarea
-          placeholder="Type your comment here"
+          placeholder="Type your review here"
           className="input input-bordered w-full pt-3 resize-none overflow-y-auto"
           style={{ height: "150px" }}
           value={content}
           onChange={(e) => setContent(e.target.value)} // 상태 업데이트
         />
-        <button type="submit" className="push btn btn-accent" disabled={isLoading}>
+        <button type="submit" className="push btn btn-primary" disabled={isLoading}>
           Post
         </button>
       </form>
     </div>
   );
 }
-export default Comment;
+export default Review;

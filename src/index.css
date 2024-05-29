@@ -75,8 +75,16 @@ html[data-theme="light"] button {
   background-color: #f9f9f9; /* 라이트 모드에서 버튼 배경색 */
 }
 html[data-theme="retro"] button {
-  background-color: #f9f9f9; /* 레트로 모드에서 버튼 배경색 */
+  background-color: oklch(76.8664% 0.104092 22.664655 /1); /* 레트로 모드에서 버튼 배경색 */
   border: oklch(76.8664% 0.104092 22.664655 /1) 1px solid;
+}
+html[data-theme="retro"] .btn-accent {
+  background-color: oklch(46.8664% 0.184092 2.664655 /1); /* 레트로 모드에서 버튼 배경색 */
+  border: oklch(56.8664% 0.104092 22.664655 /1) 1px solid;
+}
+html[data-theme="retro"] .btn-accent:hover {
+  background-color: oklch(46.8664% 0.184092 2.664655 /1); /* 레트로 모드에서 버튼 배경색 */
+  border: oklch(56.8664% 0.104092 22.664655 /1) 1px solid;
 }
 html[data-theme="retro"] button:hover {
   background-color: oklch(76.8664% 0.104092 22.664655 /1);
@@ -128,13 +136,59 @@ html[data-theme="dark"] .area {
 }
 .comment {
   margin-left: 422px;
+  width: 1698px;
 }
 .push {
-  margin-left: 1595px;
+  margin-left: 1602px;
 }
 .commentDisplay {
   width: 1662px;
 }
 .commentBox {
   padding-left: 440px;
+}
+.slider-container {
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider > * {
+  min-width: 18.8%; /* 한 번에 5개의 카드를 표시하려면 각 카드의 너비를 20%로 설정 */
+  box-sizing: border-box;
+}
+html[data-theme="retro"] .stn {
+  background-color: oklch(76.8664% 0.104092 22.664655 /1);
+}
+.glass {
+  background-image: linear-gradient(225deg, rgb(255 255 255 / var(--glass-opacity, 20%)) 0%, rgb(0 0 0 / 0%) 200%),
+    linear-gradient(
+      var(--glass-reflex-degree, 100deg),
+      rgb(255 255 255 / var(--glass-reflex-opacity, 0%)) 25%,
+      rgb(0 0 0 / 0%) 25%
+    );
+}
+html[data-theme="retro"] .stat-value {
+  color: rgb(58, 64, 46);
+}
+.stat-value {
+  font-size: 30px;
+}
+html[data-theme="retro"] .like {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+.loginBtn {
+  background-color: none;
+  border-color: #535bf2;
+}
+html[data-theme="retro"] .loginBtn {
+  color: #1a1a1a;
 }

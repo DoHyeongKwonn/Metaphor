@@ -5,7 +5,6 @@ import { User } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 function Nav() {
-  // User 타입 또는 null을 상태로 가질 수 있음을 명시
   const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
 
@@ -36,7 +35,9 @@ function Nav() {
       </div>
       <div className="w-3/4 pl-20">
         <div>
-          <a className="btn btn-ghost px-10">영화</a>
+          <a href="/Movies" className="btn btn-ghost px-10">
+            영화
+          </a>
         </div>
         <div>
           <a href="/spoils" className="btn btn-ghost px-10">
@@ -48,14 +49,8 @@ function Nav() {
             일반 게시판
           </a>
         </div>
-        <div>
-          <a className="btn btn-ghost px-10">내가 쓴 리뷰</a>
-        </div>
       </div>
       <div className="gap-2">
-        <div>
-          <input type="text" placeholder="Search" className="input input-bordered w-32 md:w-auto" />
-        </div>
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
@@ -78,6 +73,15 @@ function Nav() {
             <li>{!user ? <a href="/login">Log in</a> : <a onClick={LogOut}>Log out</a>}</li>
           </ul>
         </div>
+        <button className="loginBtn bg-none ml-5">
+          {!user ? (
+            <a href="/login">Log in</a>
+          ) : (
+            <a className="loginBtn" onClick={LogOut}>
+              Log out
+            </a>
+          )}
+        </button>
         <div className="ml-20 mt-3">
           <DarkMode />
         </div>
