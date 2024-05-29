@@ -151,40 +151,42 @@ function Content() {
           )}
         </div>
       </div>
-      <div className="commentBox mt-10">
-        {comments.length > 0 ? (
-          comments.map((comment, index) => (
-            <div key={index} className="commentDisplay mb-2">
-              <div className="area rounded-lg shadow-md pb-1 min-h-15">
-                <div className="px-4 pt-2">{comment.content}</div>
-                <div className="px-4 text-right">
-                  {comment.username} - {comment.time}
-                  {user !== null && user.displayName === comment.username && (
-                    <button
-                      className="btn btn-circle w-[24px] h-[24px] ml-[16px]"
-                      onClick={() => handleDeleteComment(comment.id)}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-3 w-3"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
+      <div className="board  justify-center mt-10">
+        <div className="commentBox mt-10">
+          {comments.length > 0 ? (
+            comments.map((comment, index) => (
+              <div key={index} className="commentDisplay mb-2 px-[430px]">
+                <div className="area rounded-lg shadow-md pb-1 min-h-15">
+                  <div className="px-4 pt-2">{comment.content}</div>
+                  <div className="px-4 text-right">
+                    {comment.username} - {comment.time}
+                    {user !== null && user.displayName === comment.username && (
+                      <button
+                        className="btn btn-circle w-[24px] h-[24px] ml-[16px]"
+                        onClick={() => handleDeleteComment(comment.id)}
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </button>
-                  )}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-3 w-3"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
-        ) : (
-          <div className="pl-2 my-2">등록된 댓글이 없습니다.</div>
-        )}
-      </div>
-      <div className="comment pb-4 px-4 w-2/3">
-        <Comment collectionName={collectionName} postId={id} />
+            ))
+          ) : (
+            <div className=" my-2 px-[435px]">등록된 댓글이 없습니다.</div>
+          )}
+        </div>
+        <div className="comment pb-4 px-4  px-[430px]">
+          <Comment collectionName={collectionName} postId={id} />
+        </div>
       </div>
     </>
   );

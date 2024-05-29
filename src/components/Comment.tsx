@@ -40,20 +40,18 @@ function Comment({ collectionName, postId }: CommentProps) {
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <textarea
-          placeholder="Type your comment here"
-          className="input input-bordered w-full pt-3 resize-none overflow-y-auto"
-          style={{ height: "150px" }}
-          value={content}
-          onChange={(e) => setContent(e.target.value)} // 상태 업데이트
-        />
-        <button type="submit" className="push btn btn-accent" disabled={isLoading}>
-          Post
-        </button>
-      </form>
-    </div>
+    <form onSubmit={onSubmit}>
+      <textarea
+        placeholder="Type your comment here"
+        className="input input-bordered w-full pt-3 resize-none overflow-y-auto"
+        style={{ height: "150px" }}
+        value={content}
+        onChange={(e) => setContent(e.target.value)} // 상태 업데이트
+      />
+      <button type="submit" className=" btn btn-accent float-end" disabled={isLoading}>
+        Post
+      </button>
+    </form>
   );
 }
 export default Comment;

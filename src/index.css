@@ -11,8 +11,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-} */
-/* #root {
+}
+#root {
   height: 2000px;
 } */
 a {
@@ -134,19 +134,19 @@ html[data-theme="dark"] .area {
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
   color: white;
 }
-.comment {
+/* .comment {
   margin-left: 422px;
   width: 1698px;
-}
-.push {
+} */
+/* .push {
   margin-left: 1602px;
-}
-.commentDisplay {
+} */
+/* .commentDisplay {
   width: 1662px;
-}
-.commentBox {
+} */
+/* .commentBox {
   padding-left: 440px;
-}
+} */
 .slider-container {
   width: 80%;
   overflow: hidden;

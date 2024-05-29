@@ -40,7 +40,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <>
+    <div>
       <p className="flex justify-center mt-5 stat-value text-accent">현재 상영작</p>
       <div className="flex justify-center mt-5">
         <button className="stn btn-circle mt-[350px] mx-[10px] focus:outline-none" onClick={handleNowPlayingPrev}>
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
           ❯
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
