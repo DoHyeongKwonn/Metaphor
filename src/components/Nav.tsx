@@ -75,9 +75,11 @@ function Nav() {
         </div>
         <button className="loginBtn bg-none ml-5">
           {!user ? (
-            <a href="/login">Log in</a>
+            <a className="loginBtn font-bold" href="/login">
+              Log in
+            </a>
           ) : (
-            <a className="loginBtn" onClick={LogOut}>
+            <a className="loginBtn font-bold" onClick={LogOut}>
               Log out
             </a>
           )}
