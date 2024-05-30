@@ -56,7 +56,7 @@ function WritePage({ collectionName }: { collectionName: string }) {
 
     try {
       setLoading(true);
-      const doc = await addDoc(collection(db, collectionName), {
+      const docRef = await addDoc(collection(db, collectionName), {
         // prop으로 받은 collectionName 에 데이터를 저장
         title,
         content,
@@ -65,11 +65,14 @@ function WritePage({ collectionName }: { collectionName: string }) {
         userId: user.uid,
       });
       if (file) {
-        const locationRef = ref(storage, `${collectionName}/${user.uid}/${doc.id}`);
+        const fileName = `${docRef.id}_${file.name}`;
+        const locationRef = ref(storage, `${collectionName}/${user.uid}/${fileName}`);
         const result = await uploadBytes(locationRef, file);
         const url = await getDownloadURL(result.ref);
-        await updateDoc(doc, {
+
+        await updateDoc(docRef, {
           photo: url,
+          imageFileName: fileName, // Firestore에 파일 이름 저장
         });
       }
       console.log("Document successfully written!");
@@ -131,13 +134,13 @@ function WritePage({ collectionName }: { collectionName: string }) {
           />
           {fileURL && (
             <div className="relative mt-4 pt-5">
-              <button className="deleteImage btn btn-circle bg-current absolute top-0 left-72 z-10 " onClick={onClick}>
+              <button className="btn btn-circle bg-current absolute top-0 left-[298px] z-10 w-8 h-8" onClick={onClick}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="red"
+                  stroke="black"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>

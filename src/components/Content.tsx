@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { auth, db } from "../firebase";
 import { useNavigate, useParams } from "react-router-dom";
 import Comment from "./Comment";
-// import ImageComponent from "./Image";
+import ImageComponent from "./Image";
 
 function Content() {
   const { collectionName, id } = useParams<{ collectionName: string; id: string }>();
@@ -119,9 +119,6 @@ function Content() {
     <>
       <div className="flex flex-col items-center mt-10">
         <div className="pb-4 px-4 w-2/3">
-          {/* <div>
-            <ImageComponent />
-          </div> */}
           {contents && (
             <div className="area rounded-lg shadow-md">
               <div className="px-6 py-4 flex justify-between">
@@ -130,6 +127,9 @@ function Content() {
                   <p className="area text-gray-600 text-sm text-right">글쓴이: {contents.username}</p>
                   <p className="area text-gray-600 text-sm text-right">{contents.time}</p>
                 </div>
+              </div>
+              <div>
+                <ImageComponent />
               </div>
               <div className="px-6 py-4 min-h-28">
                 <p className="area text-gray-700">{contents.content}</p>
@@ -180,7 +180,7 @@ function Content() {
               </div>
             ))
           ) : (
-            <div className=" my-2 ">등록된 댓글이 없습니다.</div>
+            <div className=" my-2 pl-3">등록된 댓글이 없습니다.</div>
           )}
         </div>
         <div className="comment pb-4 px-4  w-2/3">

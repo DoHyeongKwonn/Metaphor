@@ -92,7 +92,7 @@ html[data-theme="retro"] button:hover {
 }
 html[data-theme="retro"] .upload {
   border: oklch(76.8664% 0.104092 22.664655 /1) 1px solid;
-  background-color: #f9f9f9; /* 레트로 모드에서 버튼 배경색 */
+  background-color: oklch(76.8664% 0.104092 22.664655 /1); /* 레트로 모드에서 버튼 배경색 */
   cursor: pointer;
 }
 html[data-theme="retro"] .upload:hover {

@@ -116,18 +116,17 @@ export const fetchFilteredMovies = async (params: Params, page: number): Promise
         page: page,
         "vote_count.gte": 100,
         "popularity.gte": 200,
-        // sort_by: "release_date.desc",
+        sort_by: "release_date.desc",
         ...params,
       },
     });
     console.log(`API response for page ${page}:`, response.data); // API 응답 로그
 
-    // 데이터를 클라이언트에서 정렬
-    const sortedMovies = response.data.results.sort((a: Movie, b: Movie) => {
-      return new Date(b.release_date).getTime() - new Date(a.release_date).getTime();
-    });
+    // 클라이언트 측에서 데이터를 release_date 기준으로 정렬
+    const movies = response.data.results as Movie[];
+    movies.sort((a, b) => new Date(b.release_date).getTime() - new Date(a.release_date).getTime());
 
-    return sortedMovies;
+    return movies;
   } catch (error) {
     console.error("Error fetching movies:", error);
     throw error;
