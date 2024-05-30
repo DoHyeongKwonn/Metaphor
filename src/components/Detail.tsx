@@ -108,7 +108,7 @@ function Detail() {
           />
         )}
 
-        <div className="pt-2 pl-5 w-[700px]">
+        <div className="pt-2 pl-5 w-1/3">
           <h1 className="text-4xl font-bold">{movie.title}</h1>
           <p className="pt-6 h-[100px] overflow-hidden">{movie.overview}</p>
 
